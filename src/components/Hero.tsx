@@ -1,93 +1,68 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle } from "lucide-react";
-import heroImage from "@/assets/hero-fitness-2.png";
+import { ArrowRight, CheckCircle, Star } from "lucide-react";
+import heroImage from "@/assets/hero-fitness.jpg";
 
 const Hero = ({ onCtaClick }: { onCtaClick: () => void }) => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Transformação fitness - Agile Fit"
+          alt="Mulher fitness comemorando resultados"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-transparent" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-3xl">
+        <div className="max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 backdrop-blur-sm border border-primary/20">
-            <CheckCircle className="w-4 h-4" />
-            <span className="text-sm font-semibold">Método Comprovado</span>
+          <div className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full mb-6 backdrop-blur-sm border border-white/20">
+            <Star className="w-5 h-5 text-secondary" />
+            <span className="text-sm font-semibold">O favorito de mais de 10.000 alunas</span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            Emagreça com
-            <span className="block bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-              Método Ágil
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight [text-shadow:_0_4px_8px_rgba(0,0,0,0.4)]">
+            O Fim da Luta Contra a Balança
+            <span className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mt-2">
+              Começa Agora
             </span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl sm:text-2xl text-muted-foreground mb-8 leading-relaxed">
-            Transforme seu corpo em <strong className="text-foreground">apenas 12 semanas</strong> com o método que já ajudou mais de 10.000 pessoas a alcançarem seus objetivos.
+          <p className="text-xl sm:text-2xl text-white/90 mb-10 leading-relaxed max-w-3xl mx-auto">
+            Junte-se ao método que já transformou milhares de corpos e recuperou a autoestima. Chega de dietas malucas e treinos chatos.
           </p>
 
-          {/* Benefits List */}
-          <ul className="space-y-3 mb-8">
-            {[
-              "Plano alimentar personalizado",
-              "Treinos de 30 minutos",
-              "Suporte 24/7 no grupo VIP",
-              "Resultados em 21 dias",
-            ].map((benefit, index) => (
-              <li key={index} className="flex items-center gap-3 text-lg">
-                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                <span>{benefit}</span>
-              </li>
-            ))}
-          </ul>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          {/* CTA Button */}
+          <div className="flex justify-center">
             <Button
               size="xl"
               variant="cta"
               onClick={onCtaClick}
-              className="group"
+              className="group text-lg shadow-[var(--shadow-strong)] hover:shadow-primary/50"
             >
-              Começar Minha Transformação
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button
-              size="xl"
-              variant="outline"
-              onClick={onCtaClick}
-            >
-              Ver Depoimentos
+              Quero Minha Transformação
+              <ArrowRight className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
 
-          {/* Social Proof */}
-          <div className="mt-8 flex items-center gap-6 flex-wrap">
-            <div>
-              <div className="text-3xl font-bold text-primary">10K+</div>
-              <div className="text-sm text-muted-foreground">Alunos</div>
-            </div>
-            <div className="h-12 w-px bg-border" />
-            <div>
-              <div className="text-3xl font-bold text-primary">4.9★</div>
-              <div className="text-sm text-muted-foreground">Avaliação</div>
-            </div>
-            <div className="h-12 w-px bg-border" />
-            <div>
-              <div className="text-3xl font-bold text-primary">92%</div>
-              <div className="text-sm text-muted-foreground">Taxa de Sucesso</div>
-            </div>
+          {/* Benefits List */}
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+            {[
+              "Plano alimentar delicioso",
+              "Treinos rápidos de 30 min",
+              "Comunidade VIP de apoio",
+              "Resultados em 21 dias",
+            ].map((benefit, index) => (
+              <div key={index} className="flex items-center justify-center gap-2 text-sm bg-white/10 p-2 rounded-lg border border-white/20 backdrop-blur-sm">
+                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                <span>{benefit}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

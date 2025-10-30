@@ -29,8 +29,8 @@ const benefits = [
   },
   {
     icon: Award,
-    title: "Certificado Digital",
-    description: "Receba seu certificado de conclusão ao finalizar o programa.",
+    title: "Acesso Vitalício",
+    description: "Pague uma vez e tenha acesso para sempre a todo o conteúdo e atualizações.",
   },
 ];
 
@@ -41,9 +41,9 @@ const Benefits = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Por Que Escolher o
+            Por Que o Agile Fit
             <span className="block bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-              Agile Fit?
+              Realmente Funciona?
             </span>
           </h2>
           <p className="text-xl text-muted-foreground">

@@ -1,6 +1,8 @@
 import Hero from "@/components/Hero";
 import Benefits from "@/components/Benefits";
+import ProgramDetails from "@/components/ProgramDetails";
 import Testimonials from "@/components/Testimonials";
+import Faq from "@/components/Faq";
 import NewsletterForm from "@/components/NewsletterForm";
 import { useEffect } from "react";
 
@@ -27,7 +29,9 @@ const Index = () => {
     <main className="min-h-screen">
       <Hero onCtaClick={scrollToForm} />
       <Benefits />
+      <ProgramDetails />
       <Testimonials />
+      <Faq />
       <NewsletterForm />
     </main>
   );

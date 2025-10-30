@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Benefits from "@/components/Benefits";
 import ProgramDetails from "@/components/ProgramDetails";
@@ -26,12 +27,21 @@ const Index = () => {
   }, []);
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background">
+      <Header />
       <Hero onCtaClick={scrollToForm} />
-      <Benefits />
-      <ProgramDetails />
-      <Testimonials />
-      <Faq />
+      <div id="beneficios">
+        <Benefits />
+      </div>
+      <div id="o-que-voce-recebe">
+        <ProgramDetails />
+      </div>
+      <div id="depoimentos">
+        <Testimonials />
+      </div>
+      <div id="faq">
+        <Faq />
+      </div>
       <NewsletterForm />
     </main>
   );

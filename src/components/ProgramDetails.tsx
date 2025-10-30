@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Dumbbell, UtensilsCrossed, Video, Users, CalendarCheck } from "lucide-react";
+import { Dumbbell, UtensilsCrossed, Video, Users, CalendarCheck, BrainCircuit } from "lucide-react";
 
 const details = [
   {
@@ -26,6 +26,11 @@ const details = [
     icon: CalendarCheck,
     title: "Planejamento Semanal",
     description: "Organize sua rotina de treinos e alimentação com nosso planner exclusivo para não perder o foco.",
+  },
+  {
+    icon: BrainCircuit,
+    title: "Mentalidade Vencedora",
+    description: "Desenvolva o foco e a disciplina para não desistir e manter seus resultados a longo prazo.",
   },
 ];
 

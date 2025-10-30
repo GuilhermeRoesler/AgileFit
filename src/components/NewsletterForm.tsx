@@ -28,42 +28,12 @@ const NewsletterForm = () => {
 
     setIsSubmitting(true);
 
-    // Preparar dados para o PHP
-    const formData = new FormData();
-    formData.append('fullname', fullname);
-    formData.append('email', email);
-
-    // Chamada real da API com fetch
-    fetch('submit.php', {
-      method: 'POST',
-      body: formData
-    })
-      .then(response => {
-        if (!response.ok) {
-          // Trata erros de servidor (ex: 500)
-          toast.error(response.statusText)
-          throw new Error(`Erro no servidor: ${response.statusText}`);
-        }
-        return response.json(); // Converte a resposta para JSON
-      })
-      .then(data => {
-        // 'data' é o JSON retornado pelo PHP: {ok: boolean, message: string}
-        if (data.ok) {
-          // Sucesso (veio do PHP)
-          setIsSubmitted(true);
-          setIsSubmitting(false);
-          toast.success("Inscrição realizada com sucesso! Confira seu email.");
-          // Mostra estado de sucesso no botão
-        } else {
-          // Erro (veio do PHP, ex: "E-mail inválido.")
-          toast.error(data.message);
-          throw new Error(data.message);
-        }
-      })
-      .catch(error => {
-        // Trata qualquer erro (seja do 'throw' acima ou falha de rede)
-        console.error('Erro no envio:', error);
-      });
+    // Simulação de chamada de API
+    setTimeout(() => {
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+      toast.success("Inscrição realizada com sucesso! Confira seu email.");
+    }, 1500);
   };
 
   if (isSubmitted) {
@@ -180,7 +150,7 @@ const NewsletterForm = () => {
                     type="submit"
                     variant="cta"
                     size="xl"
-                    className="w-full"
+                    className="w-full animate-pulse-glow"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Processando..." : "Quero Começar Agora! 🚀"}

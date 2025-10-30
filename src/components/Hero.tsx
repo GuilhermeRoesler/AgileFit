@@ -16,7 +16,7 @@ const Hero = ({ onCtaClick }: { onCtaClick: () => void }) => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full mb-6 backdrop-blur-sm border border-white/20">
@@ -43,7 +43,7 @@ const Hero = ({ onCtaClick }: { onCtaClick: () => void }) => {
               size="xl"
               variant="cta"
               onClick={onCtaClick}
-              className="group text-lg shadow-[var(--shadow-strong)] hover:shadow-primary/50"
+              className="group text-lg shadow-[var(--shadow-strong)] hover:shadow-primary/50 animate-pulse-glow"
             >
               Quero Minha Transformação
               <ArrowRight className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform" />

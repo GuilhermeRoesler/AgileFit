@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Star } from "lucide-react";
-import heroImage from "@/assets/hero-fitness-2.png";
+import heroImage from "@/assets/hero-fitness.jpg";
 
 const Hero = ({ onCtaClick }: { onCtaClick: () => void }) => {
   return (

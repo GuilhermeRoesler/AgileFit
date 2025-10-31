@@ -34,7 +34,7 @@ const NewsletterForm = () => {
     formData.append('email', email);
 
     // Chamada real da API com fetch
-    fetch('submit.php', {
+    fetch('https://agile-fit.fwh.is/submit.php', {
       method: 'POST',
       body: formData
     })

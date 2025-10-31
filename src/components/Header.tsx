@@ -38,7 +38,7 @@ const Header = () => {
           key={link.href}
           href={link.href}
           onClick={(e) => handleScrollTo(e, link.href)}
-          className="text-xl font-medium transition-colors hover:text-primary"
+          className="text-lg font-medium transition-colors hover:text-primary"
         >
           {link.label}
         </a>
@@ -53,7 +53,7 @@ const Header = () => {
         scrolled ? "bg-background/95 shadow-md backdrop-blur-sm" : "bg-transparent text-white"
       )}
     >
-      <a href="#" className="flex items-center gap-2 font-bold text-2xl">
+      <a href="#" className="flex items-center gap-3 font-bold text-2xl">
         <img src="/favicon.png" alt="Agile Fit Logo" className="h-12 w-12" />
         <span>Agile Fit</span>
       </a>
@@ -84,7 +84,7 @@ const Header = () => {
       ) : (
         <nav className="hidden md:flex items-center gap-6">
           {renderNavLinks()}
-          <Button asChild variant="cta" size="lg" className="animate-pulse-glow text-xl">
+          <Button asChild variant="cta" className="animate-pulse-glow text-lg">
             <a href="#inscricao" onClick={(e) => handleScrollTo(e, "#inscricao")}>
               Quero Começar
             </a>

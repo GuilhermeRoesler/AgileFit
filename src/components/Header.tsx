@@ -38,7 +38,7 @@ const Header = () => {
           key={link.href}
           href={link.href}
           onClick={(e) => handleScrollTo(e, link.href)}
-          className="text-lg font-medium transition-colors hover:text-primary"
+          className="text-md font-medium transition-colors hover:text-primary"
         >
           {link.label}
         </a>
@@ -49,7 +49,7 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 flex items-center justify-between h-24 px-6 md:px-8 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 flex items-center justify-between h-20 px-6 md:px-8 transition-all duration-300",
         scrolled ? "bg-background/95 shadow-md backdrop-blur-sm" : "bg-transparent text-white"
       )}
     >
@@ -84,7 +84,7 @@ const Header = () => {
       ) : (
         <nav className="hidden md:flex items-center gap-6">
           {renderNavLinks()}
-          <Button asChild variant="cta" className="animate-pulse-glow text-lg">
+          <Button asChild variant="cta" className="animate-pulse-glow text-md">
             <a href="#inscricao" onClick={(e) => handleScrollTo(e, "#inscricao")}>
               Quero Começar
             </a>

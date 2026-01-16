@@ -1,73 +1,115 @@
-# Welcome to your Lovable project
+# <img src="public/favicon.png" width="30" align="center"> Agile Fit 💪
 
-## Project info
+> Transforme o seu corpo em 12 semanas com o Método Ágil.
 
-**URL**: https://lovable.dev/projects/c2ab7e9a-e018-4141-8815-c001093c91ff
+O **Agile Fit** é uma landing page de alta performance desenvolvida para promover e vender um programa de emagrecimento online. O projeto foca numa experiência de utilizador fluida, design responsivo moderno e boas práticas de desenvolvimento web.
 
-## How can I edit this code?
+![](public/demo.png)
 
-There are several ways of editing your application.
+## 🚀 Sobre o Projeto
 
-**Use Lovable**
+Este projeto é uma aplicação Single Page Application (SPA) que serve como o principal ponto de contacto para potenciais clientes do método Agile Fit. A página inclui diversas secções estratégicas para conversão, incluindo apresentação do método, benefícios, prova social (depoimentos), FAQ e captura de leads.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c2ab7e9a-e018-4141-8815-c001093c91ff) and start prompting.
+### Funcionalidades Principais
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Hero Section Imersiva**: Destaque visual com Call-to-Action (CTA) claro.
+- **Apresentação de Benefícios**: Cards informativos sobre as vantagens do programa.
+- **Detalhes do Programa**: Explicação do método de 12 semanas.
+- **Prova Social**: Secção de depoimentos para aumentar a credibilidade.
+- **FAQ Interativo**: Respostas às dúvidas mais comuns com componentes accordion.
+- **Formulário de Inscrição/Newsletter**: Validação robusta e feedback visual imediato.
+- **Design Responsivo**: Otimizado para telemóveis, tablets e desktops.
 
-**Use your preferred IDE**
+## 🛠️ Tecnologias Utilizadas
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Este projeto foi construído com uma stack moderna focada em performance e escalabilidade:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Core**: [React](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **Linguagem**: [TypeScript](https://www.typescriptlang.org/)
+- **Estilos**: [Tailwind CSS](https://tailwindcss.com/)
+- **Componentes UI**: [shadcn/ui](https://ui.shadcn.com/) (baseado em Radix UI)
+- **Ícones**: [Lucide React](https://lucide.dev/)
+- **Routing**: [React Router DOM](https://reactrouter.com/)
+- **Gestão de Estado (Server)**: [TanStack Query](https://tanstack.com/query/latest)
+- **Formulários**: [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/) (para validação)
+- **Notificações**: [Sonner](https://sonner.emilkowal.ski/)
 
-Follow these steps:
+## 📂 Estrutura do Projeto
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+A estrutura de pastas segue as melhores práticas para aplicações React escaláveis:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+```bash
+src/
+├── assets/        # Imagens e recursos estáticos (hero images, logos)
+├── components/    # Componentes React reutilizáveis
+│   ├── ui/        # Componentes base do shadcn/ui (Button, Card, Input, etc.)
+│   └── ...        # Componentes específicos (Hero, Benefits, Header, etc.)
+├── hooks/         # Custom React hooks (use-toast, use-mobile)
+├── lib/           # Funções utilitárias (utils.ts)
+├── pages/         # Componentes de página (Index, NotFound)
+└── App.tsx        # Configuração principal de rotas e providers
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🏁 Como Começar
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Siga estas instruções para configurar o projeto localmente.
+
+### Pré-requisitos
+
+- Node.js (versão 18 ou superior recomendada)
+- npm, pnpm ou yarn
+
+### Instalação
+
+1. **Clone o repositório:**
+
+```bash
+git clone https://github.com/GuilhermeRoesler/AgileFit
+cd agilefit
+```
+
+2. **Instale as dependências:**
+
+```bash
+npm install
+# ou
+pnpm install
+```
+
+3. **Inicie o servidor de desenvolvimento:**
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. **Aceda à aplicação:**
+   Abra o seu navegador em `http://localhost:8080` (ou a porta indicada no terminal).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📜 Scripts Disponíveis
 
-**Use GitHub Codespaces**
+- `npm run dev`: Inicia o servidor de desenvolvimento.
+- `npm run build`: Cria a build de produção na pasta `dist`.
+- `npm run preview`: Visualiza a build de produção localmente.
+- `npm run lint`: Executa o ESLint para verificar a qualidade do código.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🎨 Personalização
 
-## What technologies are used for this project?
+### Adicionar novos componentes UI
 
-This project is built with:
+Este projeto utiliza `shadcn/ui`. Para adicionar novos componentes base, não os crie do zero. Verifique a documentação e instale conforme necessário (se estiver a usar a CLI do shadcn) ou copie o código para a pasta `src/components/ui`.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Estilos Globais
 
-## How can I deploy this project?
+As variáveis de CSS globais e configurações do Tailwind encontram-se em `src/index.css` e `tailwind.config.ts`.
 
-Simply open [Lovable](https://lovable.dev/projects/c2ab7e9a-e018-4141-8815-c001093c91ff) and click on Share -> Publish.
+## 🤝 Contribuição
 
-## Can I connect a custom domain to my Lovable project?
+1. Faça um Fork do projeto
+2. Crie uma Branch para a sua Feature (`git checkout -b feature/MinhaFeature`)
+3. Faça o Commit das suas mudanças (`git commit -m 'Adiciona: MinhaFeature'`)
+4. Faça o Push para a Branch (`git push origin feature/MinhaFeature`)
+5. Abra um Pull Request
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Desenvolvido para **Agile Fit**.

@@ -1,5 +1,6 @@
 import { useSyncExternalStore } from "react";
 import { Toaster } from "@/components/ui/sonner";
+import { appPathname } from "@/lib/paths";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
@@ -10,8 +11,7 @@ function subscribe(onStoreChange: () => void) {
 }
 
 function getPathname() {
-  const path = window.location.pathname.replace(/\/$/, "") || "/";
-  return path === "/index.html" ? "/" : path;
+  return appPathname();
 }
 
 function usePathname() {

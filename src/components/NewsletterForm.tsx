@@ -8,6 +8,7 @@ import transformationImage from "@/assets/transformation.jpg";
 import { formCopy, site } from "@/content/site";
 import { isValidEmail } from "@/lib/email";
 import { submitLead } from "@/lib/leads";
+import { withBase } from "@/lib/paths";
 
 const NewsletterForm = () => {
   const [fullname, setFullname] = useState("");
@@ -209,7 +210,7 @@ const NewsletterForm = () => {
 
                   <p className="text-center text-xs text-muted-foreground">
                     {formCopy.consent}{" "}
-                    <a href="/privacidade" className="underline underline-offset-2 hover:text-primary">
+                    <a href={withBase("/privacidade")} className="underline underline-offset-2 hover:text-primary">
                       {formCopy.privacyLinkLabel}
                     </a>
                     .

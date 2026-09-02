@@ -2,7 +2,7 @@ import { defineConfig, loadEnv, type Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
-import { writeFile } from "node:fs/promises";
+import { writeFile, copyFile } from "node:fs/promises";
 
 function seoFilesPlugin(siteUrl: string): Plugin {
   const origin = siteUrl.replace(/\/$/, "");
@@ -40,8 +40,10 @@ function seoFilesPlugin(siteUrl: string): Plugin {
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   const siteUrl = env.VITE_SITE_URL ?? "https://example.com";
+  const base = env.VITE_BASE_PATH || "/";
 
   return {
+    base,
     plugins: [
       react(),
       tailwindcss(),
@@ -52,6 +54,13 @@ export default defineConfig(({ mode }) => {
         },
       },
       seoFilesPlugin(siteUrl),
+      {
+        name: "spa-github-pages-fallback",
+        async writeBundle(options) {
+          const outDir = options.dir ?? "dist";
+          await copyFile(path.join(outDir, "index.html"), path.join(outDir, "404.html"));
+        },
+      },
     ],
     resolve: {
       alias: {

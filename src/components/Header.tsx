@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { withBase } from "@/lib/paths";
 import { cn } from "@/lib/utils";
 import { navLinks, site } from "@/content/site";
 
@@ -50,8 +51,8 @@ const Header = () => {
         scrolled ? "bg-background/95 text-foreground shadow-md backdrop-blur-sm" : "bg-transparent text-white",
       )}
     >
-      <a href="/" className="flex items-center gap-3 text-2xl font-bold">
-        <img src="/favicon.svg" alt="" className="h-12 w-12 rounded-[22%]" width={48} height={48} />
+      <a href={withBase("/")} className="flex items-center gap-3 text-2xl font-bold">
+        <img src={withBase("/favicon.svg")} alt="" className="h-12 w-12 rounded-[22%]" width={48} height={48} />
         <span>{site.name}</span>
       </a>
 

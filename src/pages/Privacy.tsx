@@ -1,17 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { privacyCopy, site } from "@/content/site";
+import { withBase } from "@/lib/paths";
 
 const Privacy = () => {
   return (
     <main className="min-h-screen bg-background">
       <header className="border-b border-border">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
-          <a href="/" className="flex items-center gap-3 text-xl font-bold">
-            <img src="/favicon.svg" alt="" className="h-10 w-10 rounded-[22%]" width={40} height={40} />
+          <a href={withBase("/")} className="flex items-center gap-3 text-xl font-bold">
+            <img src={withBase("/favicon.svg")} alt="" className="h-10 w-10 rounded-[22%]" width={40} height={40} />
             <span>{site.name}</span>
           </a>
           <Button asChild variant="outline">
-            <a href="/">Voltar</a>
+            <a href={withBase("/")}>Voltar</a>
           </Button>
         </div>
       </header>

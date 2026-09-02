@@ -1,4 +1,5 @@
 import { footerCopy, site } from "@/content/site";
+import { withBase } from "@/lib/paths";
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
         <div className="grid gap-8 md:grid-cols-2 md:items-start">
           <div>
             <div className="mb-3 flex items-center gap-3 text-xl font-bold">
-              <img src="/favicon.svg" alt="" className="h-10 w-10 rounded-[22%]" width={40} height={40} />
+              <img src={withBase("/favicon.svg")} alt="" className="h-10 w-10 rounded-[22%]" width={40} height={40} />
               <span>{site.name}</span>
             </div>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground">{footerCopy.blurb}</p>
@@ -17,10 +18,10 @@ const Footer = () => {
             className="flex flex-wrap gap-x-6 gap-y-2 md:justify-end"
             aria-label="Rodapé"
           >
-            <a href="/" className="text-sm font-medium hover:text-primary">
+            <a href={withBase("/")} className="text-sm font-medium hover:text-primary">
               {footerCopy.home}
             </a>
-            <a href="/privacidade" className="text-sm font-medium hover:text-primary">
+            <a href={withBase("/privacidade")} className="text-sm font-medium hover:text-primary">
               {footerCopy.privacy}
             </a>
             <a

@@ -56,12 +56,31 @@ Acesse `http://localhost:8080`.
 Copie `.env.example` para `.env.production` (ou `.env`) e ajuste:
 
 ```bash
+VITE_BASE_PATH=/
 VITE_SITE_URL=https://example.com
 VITE_LEADS_API_URL=https://example.com/api/leads
 ```
 
+- `VITE_BASE_PATH` — prefixo público (`/` em domínio raiz; `/AgileFit/` no GitHub Pages de projeto)
 - `VITE_SITE_URL` — meta tags OG/Twitter, canonical, sitemap e robots no build
 - `VITE_LEADS_API_URL` — endpoint do formulário de leads
+
+## CI/CD (GitHub Actions)
+
+O workflow [`.github/workflows/ci.yml`](.github/workflows/ci.yml) roda em PRs e no `main`:
+
+1. **Quality** — `typecheck`, `lint`, `test` e `build`
+2. **Deploy** (só em `main`/`master`) — build com base do Pages e publicação no GitHub Pages
+
+### Ativar o deploy
+
+1. No repositório: **Settings → Pages → Build and deployment → Source: GitHub Actions**
+2. (Opcional) **Settings → Secrets and variables → Actions**
+   - Secret `VITE_LEADS_API_URL` — URL real da API de leads
+   - Variable `VITE_SITE_URL` — URL canônica (padrão: `https://<user>.github.io/<repo>`)
+   - Variable `VITE_BASE_PATH` — padrão `/<repo>/`; use `/` se houver domínio customizado na raiz
+
+URL padrão do site: `https://guilhermeroesler.github.io/AgileFit/`
 
 ## Scripts
 
@@ -85,7 +104,8 @@ Há honeypot no cliente; a validação definitiva deve permanecer no servidor.
 
 - `robots.txt` e `sitemap.xml` gerados no build com `VITE_SITE_URL`
 - Meta tags OG/Twitter + `canonical` / `og:url`
-- `.htaccess` com fallback SPA para rotas como `/privacidade`
+- `404.html` gerado no build para SPA no GitHub Pages
+- `.htaccess` com fallback SPA para Apache (rotas como `/privacidade`)
 
 ## Personalização
 

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Agile Fit">
+  <defs>
+    <linearGradient id="af" x1="32" y1="0" x2="32" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22c55e"/>
+      <stop offset="1" stop-color="#166534"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="14" ry="14" fill="url(#af)"/>
+
+  <!-- White A -->
+  <path
+    fill="#ffffff"
+    d="M17.5 51
+       L29.5 24
+       H34.5
+       L46.5 51
+       H38.8
+       L35.4 42.2
+       H28.6
+       L25.2 51
+       Z
+       M29.4 36.2
+       H34.6
+       L32 30
+       Z"
+  />
+
+  <!-- Thick orange chevron (readable at 16px) -->
+  <path
+    fill="#ff9500"
+    d="M32 9.5
+       L44.5 23
+       H37.6
+       L32 16.8
+       L26.4 23
+       H19.5
+       Z"
+  />
+</svg>

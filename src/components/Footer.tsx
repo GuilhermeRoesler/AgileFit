@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid gap-8 md:grid-cols-2 md:items-start">
           <div>
             <div className="mb-3 flex items-center gap-3 text-xl font-bold">
-              <img src="/favicon.png" alt="" className="h-10 w-10" width={40} height={40} />
+              <img src="/favicon.svg" alt="" className="h-10 w-10 rounded-[22%]" width={40} height={40} />
               <span>{site.name}</span>
             </div>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground">{footerCopy.blurb}</p>

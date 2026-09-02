@@ -7,7 +7,7 @@ const Privacy = () => {
       <header className="border-b border-border">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
           <a href="/" className="flex items-center gap-3 text-xl font-bold">
-            <img src="/favicon.png" alt="" className="h-10 w-10" width={40} height={40} />
+            <img src="/favicon.svg" alt="" className="h-10 w-10 rounded-[22%]" width={40} height={40} />
             <span>{site.name}</span>
           </a>
           <Button asChild variant="outline">

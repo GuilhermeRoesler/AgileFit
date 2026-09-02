@@ -51,7 +51,7 @@ const Header = () => {
       )}
     >
       <a href="/" className="flex items-center gap-3 text-2xl font-bold">
-        <img src="/favicon.png" alt="" className="h-12 w-12" width={48} height={48} />
+        <img src="/favicon.svg" alt="" className="h-12 w-12 rounded-[22%]" width={48} height={48} />
         <span>{site.name}</span>
       </a>
 

@@ -2,12 +2,12 @@ import sharp from "sharp";
 import { rename, stat } from "node:fs/promises";
 import path from "node:path";
 
-async function compressPng(input, { width, quality = 80 } = {}) {
+async function compressPng(input, { width, quality = 80, palette = true } = {}) {
   const original = await sharp(input).metadata();
   const pipeline = sharp(input).resize(width ?? null, null, { withoutEnlargement: true });
   const tmp = `${input}.tmp`;
 
-  await pipeline.png({ quality, compressionLevel: 9, palette: true }).toFile(tmp);
+  await pipeline.png({ quality, compressionLevel: 9, palette }).toFile(tmp);
   await rename(tmp, input);
 
   const after = await stat(input);
@@ -33,4 +33,4 @@ async function compressJpeg(input, { width, quality = 78 } = {}) {
 await compressPng("src/assets/hero-fitness.png", { width: 1600 });
 await compressJpeg("src/assets/transformation.jpg", { width: 1200 });
 await compressPng("public/demo.png", { width: 1200, quality: 75 });
-await compressPng("public/favicon.png", { width: 64, quality: 80 });
+await compressPng("public/favicon.png", { width: 180, quality: 90, palette: false });

@@ -131,6 +131,13 @@ export const testimonialsSection = {
   title: "Histórias de",
   titleAccent: "Sucesso Real",
   description: "Veja o que nossos alunos estão dizendo sobre suas transformações",
+  proofEyebrow: "Resultados reais",
+  proofImageAlt: "Refeição saudável do método Agile Fit",
+  proofStats: [
+    { value: `+${site.studentsCount}`, label: "alunos no método" },
+    { value: `${site.firstResultsDays} dias`, label: "para primeiros resultados" },
+    { value: `${site.programWeeks} sem.`, label: "de transformação" },
+  ],
 } as const;
 
 export const testimonials = [
@@ -140,7 +147,7 @@ export const testimonials = [
     content:
       "O Agile Fit mudou minha vida! Consegui emagrecer sem passar fome e com treinos que cabem na minha rotina. Recomendo demais!",
     rating: 5,
-    initials: "MS",
+    photo: "maria" as const,
     accent: "primary" as const,
   },
   {
@@ -149,7 +156,7 @@ export const testimonials = [
     content:
       "Já tentei várias dietas e nunca deu certo. Com o método Agile Fit aprendi a me alimentar corretamente e os resultados são incríveis!",
     rating: 5,
-    initials: "JS",
+    photo: "joao" as const,
     accent: "secondary" as const,
   },
   {
@@ -158,7 +165,7 @@ export const testimonials = [
     content:
       "A comunidade é o diferencial! Sempre tem alguém para motivar e tirar dúvidas. Me sinto parte de uma família fitness.",
     rating: 5,
-    initials: "AC",
+    photo: "ana" as const,
     accent: "primary" as const,
   },
 ] as const;
@@ -215,6 +222,7 @@ export const formCopy = {
 } as const;
 
 export const footerCopy = {
+  eyebrow: "Método ágil. Corpo novo.",
   blurb: `Programa de emagrecimento com treinos de 30 minutos, nutrição e comunidade. Resultados iniciais em ${site.firstResultsDays} dias.`,
   privacy: "Privacidade",
   home: "Início",

@@ -59,6 +59,8 @@
   --animate-accordion-up: accordion-up 0.2s ease-out;
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-fade-in: fade-in 0.6s ease-out both;
+  --animate-ken-burns: ken-burns 22s ease-out both;
+  --animate-float: float 5.5s ease-in-out infinite;
   --breakpoint-2xl: 87.5rem;
 }
 
@@ -100,6 +102,25 @@
   }
 }
 
+@keyframes ken-burns {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1.16);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -112,8 +133,8 @@
   body {
     @apply bg-background font-sans text-foreground antialiased;
     background-image:
-      radial-gradient(ellipse 80% 50% at 100% -10%, hsl(142 60% 40% / 0.06), transparent),
-      radial-gradient(ellipse 60% 40% at 0% 100%, hsl(28 90% 50% / 0.05), transparent);
+      radial-gradient(ellipse 80% 50% at 100% -10%, hsl(142 60% 40% / 0.07), transparent),
+      radial-gradient(ellipse 60% 40% at 0% 100%, hsl(28 90% 50% / 0.06), transparent);
     background-attachment: fixed;
   }
 
@@ -137,6 +158,20 @@
 
 @utility font-display {
   font-family: var(--font-display);
+}
+
+@utility bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 160px 160px;
+}
+
+@utility animate-ken-burns {
+  animation: var(--animate-ken-burns);
+}
+
+@utility animate-float {
+  animation: var(--animate-float);
 }
 
 @media (prefers-reduced-motion: reduce) {

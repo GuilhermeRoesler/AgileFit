@@ -46,10 +46,12 @@ const Header = () => {
 
   return (
     <header
-      className={cn(
-        "fixed top-0 right-0 left-0 z-50 flex h-20 items-center justify-between px-6 transition-all duration-300 md:px-8",
-        scrolled ? "bg-background/95 text-foreground shadow-md backdrop-blur-sm" : "bg-transparent text-white",
-      )}
+        className={cn(
+          "fixed top-0 right-0 left-0 z-50 flex h-20 items-center justify-between px-6 transition-all duration-300 md:px-8",
+          scrolled
+            ? "bg-background/90 text-foreground shadow-md backdrop-blur-md"
+            : "bg-transparent text-white",
+        )}
     >
       <a href={withBase("/")} className="flex items-center gap-3 font-display text-2xl font-bold tracking-tight">
         <img src={withBase("/favicon.svg")} alt="" className="h-12 w-12 rounded-[22%]" width={48} height={48} />

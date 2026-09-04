@@ -9,8 +9,12 @@ import { faqSection, faqs } from "@/content/site";
 
 const Faq = () => {
   return (
-    <section className="bg-muted/50 py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-muted/50 py-24">
+      <div
+        className="pointer-events-none absolute inset-0 bg-noise opacity-30 mix-blend-multiply"
+        aria-hidden="true"
+      />
+      <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="mb-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
             {faqSection.title}

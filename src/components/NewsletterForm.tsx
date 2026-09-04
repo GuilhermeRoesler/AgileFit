@@ -114,7 +114,7 @@ const NewsletterForm = () => {
             </Reveal>
 
             <Reveal delayMs={80} className="px-6 py-10 sm:px-10 sm:py-12">
-              <p className="mb-4 inline-flex rounded-full bg-secondary/10 px-3 py-1 text-sm font-semibold text-secondary">
+              <p className="mb-4 inline-flex rounded-full bg-secondary px-3.5 py-1.5 text-sm font-semibold text-secondary-foreground shadow-[0_8px_20px_-10px_rgba(245,158,11,0.55)]">
                 {formCopy.badge}
               </p>
 

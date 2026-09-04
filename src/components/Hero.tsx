@@ -17,41 +17,41 @@ const Hero = ({ onCtaClick }: { onCtaClick: () => void }) => {
           fetchPriority="high"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/45 to-[#0f1f16]/88" />
+        <div className="absolute inset-0 bg-linear-to-b from-[#0f1f16]/55 via-[#0f1f16]/72 to-[#0a1510]/92" />
         <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,rgba(0,0,0,0.35)_100%)]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_15%,rgba(0,0,0,0.45)_100%)]"
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-noise opacity-[0.35] mix-blend-overlay" aria-hidden="true" />
+        <div className="absolute inset-0 bg-noise opacity-[0.28] mix-blend-overlay" aria-hidden="true" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 pt-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <div className="mb-7 flex animate-fade-up flex-col items-center gap-3">
+          <div className="mb-6 flex animate-fade-up flex-col items-center gap-3">
             <img
               src={withBase("/favicon.svg")}
               alt=""
-              className="h-14 w-14 rounded-[22%] shadow-[0_8px_30px_-8px_rgba(0,0,0,0.45)] sm:h-16 sm:w-16"
+              className="h-14 w-14 rounded-[22%] shadow-[0_12px_40px_-10px_rgba(0,0,0,0.55)] sm:h-16 sm:w-16"
               width={64}
               height={64}
             />
-            <p className="font-display text-xl font-bold tracking-[0.18em] text-white uppercase sm:text-2xl">
+            <p className="font-display text-xl font-bold tracking-[0.2em] text-white uppercase sm:text-2xl">
               {site.name}
             </p>
           </div>
 
           <h1
-            className="mb-6 animate-fade-up font-display text-5xl leading-[1.05] font-extrabold [text-shadow:_0_4px_24px_rgba(0,0,0,0.35)] sm:text-6xl lg:text-7xl"
+            className="mb-6 animate-fade-up font-display text-5xl leading-[1.05] font-extrabold text-white [text-shadow:_0_2px_0_rgba(0,0,0,0.2),_0_12px_40px_rgba(0,0,0,0.45)] sm:text-6xl lg:text-7xl"
             style={{ animationDelay: "80ms" }}
           >
             {hero.headline}
-            <span className="mt-2 block bg-linear-to-r from-primary-glow via-secondary to-secondary bg-clip-text text-transparent">
+            <span className="mt-2 block text-secondary [text-shadow:_0_2px_24px_rgba(245,158,11,0.35)]">
               {hero.headlineAccent}
             </span>
           </h1>
 
           <p
-            className="mx-auto mb-10 max-w-2xl animate-fade-up text-lg leading-relaxed text-white/90 sm:text-xl"
+            className="mx-auto mb-10 max-w-2xl animate-fade-up text-lg leading-relaxed text-white/92 sm:text-xl"
             style={{ animationDelay: "160ms" }}
           >
             {hero.subheadline}

@@ -91,25 +91,13 @@ export const programDetails = [
     icon: "Video" as const,
     title: "Videoaulas Detalhadas",
     description:
-      "Acesso a uma plataforma completa com vídeos explicando cada exercício para você treinar com segurança.",
+      "Plataforma com vídeos de cada exercício para você treinar com segurança e técnica.",
   },
   {
     icon: "Users" as const,
     title: "Comunidade Exclusiva",
     description:
-      "Grupo VIP para trocar experiências, tirar dúvidas e manter a motivação sempre em alta.",
-  },
-  {
-    icon: "CalendarCheck" as const,
-    title: "Planejamento Semanal",
-    description:
-      "Organize sua rotina de treinos e alimentação com nosso planner exclusivo para não perder o foco.",
-  },
-  {
-    icon: "BrainCircuit" as const,
-    title: "Mentalidade Vencedora",
-    description:
-      "Desenvolva o foco e a disciplina para não desistir e manter seus resultados a longo prazo.",
+      "Grupo VIP para tirar dúvidas, trocar experiências e manter a motivação em alta.",
   },
 ];
 
@@ -119,6 +107,10 @@ export const productPreview = {
   dayLabel: "Hoje · Treino HIIT",
   progressLabel: "Progresso do ciclo",
   progressValue: 58,
+  streakLabel: "Sequência",
+  streakValue: "12 dias",
+  nextLabel: "Próximo",
+  nextValue: "HIIT · 19:00",
   sessions: [
     { time: "08:00", title: "Ativação metabólica", meta: "12 min", done: true },
     { time: "12:30", title: "Almoço do cardápio B", meta: "420 kcal", done: true },
@@ -131,8 +123,8 @@ export const testimonialsSection = {
   title: "Histórias de",
   titleAccent: "Sucesso Real",
   description: "Veja o que nossos alunos estão dizendo sobre suas transformações",
-  proofEyebrow: "Resultados reais",
-  proofImageAlt: "Refeição saudável do método Agile Fit",
+  proofEyebrow: "Alunos reais",
+  proofImageAlt: "Alunos do Agile Fit com resultados no método",
   proofStats: [
     { value: `+${site.studentsCount}`, label: "alunos no método" },
     { value: `${site.firstResultsDays} dias`, label: "para primeiros resultados" },

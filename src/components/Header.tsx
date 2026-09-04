@@ -29,7 +29,7 @@ const Header = () => {
     setIsSheetOpen(false);
   };
 
-  const linkClass = "text-base font-medium transition-colors hover:text-primary";
+  const linkClass = "text-base font-medium transition-colors duration-300 hover:text-primary";
 
   const renderNavLinks = () => (
     <>

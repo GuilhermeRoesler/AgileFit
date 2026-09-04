@@ -1,6 +1,5 @@
 import Reveal from "@/components/Reveal";
 import { testimonials, testimonialsSection } from "@/content/site";
-import { transformationImage } from "@/lib/images";
 import { cn } from "@/lib/utils";
 import { Star } from "lucide-react";
 import anaPhoto from "@/assets/testimonial-ana.webp";
@@ -12,6 +11,12 @@ const photos = {
   joao: joaoPhoto,
   ana: anaPhoto,
 } as const;
+
+const proofFaces = [
+  { photo: mariaPhoto, name: "Maria" },
+  { photo: joaoPhoto, name: "João" },
+  { photo: anaPhoto, name: "Ana" },
+] as const;
 
 const Testimonials = () => {
   const [featured, ...others] = testimonials;
@@ -40,33 +45,52 @@ const Testimonials = () => {
               className="pointer-events-none absolute inset-0 bg-noise opacity-40 mix-blend-multiply"
               aria-hidden="true"
             />
-            <div className="grid md:grid-cols-[1.1fr_1fr]">
-              <div className="relative min-h-[220px] md:min-h-[280px]">
-                <img
-                  src={transformationImage.src}
-                  srcSet={transformationImage.srcSet}
-                  sizes={transformationImage.sizes}
-                  alt={testimonialsSection.proofImageAlt}
-                  className="absolute inset-0 h-full w-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="absolute inset-0 bg-linear-to-r from-[#0f1f16]/15 to-[#0f1f16]/50" />
+            <div className="grid md:grid-cols-[1.05fr_1fr]">
+              <div
+                className="relative grid min-h-[240px] grid-cols-3 md:min-h-[300px]"
+                role="img"
+                aria-label={testimonialsSection.proofImageAlt}
+              >
+                {proofFaces.map((face, index) => (
+                  <div key={face.name} className="relative overflow-hidden">
+                    <img
+                      src={face.photo}
+                      alt=""
+                      className="absolute inset-0 h-full w-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div
+                      className={cn(
+                        "absolute inset-0 bg-linear-to-t from-[#0f1f16]/55 via-transparent to-transparent",
+                        index === 1 && "from-[#0f1f16]/35",
+                      )}
+                    />
+                  </div>
+                ))}
+                <div className="pointer-events-none absolute inset-y-0 left-1/3 w-px bg-white/20" />
+                <div className="pointer-events-none absolute inset-y-0 left-2/3 w-px bg-white/20" />
               </div>
-              <div className="relative flex flex-col justify-center gap-6 px-6 py-8 sm:px-10">
+
+              <div className="relative flex flex-col justify-center gap-8 px-6 py-8 sm:px-10">
                 <p className="font-display text-sm font-semibold tracking-[0.2em] text-secondary uppercase">
                   {testimonialsSection.proofEyebrow}
                 </p>
-                <div className="grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-4">
+                <dl className="space-y-5">
                   {testimonialsSection.proofStats.map((stat) => (
-                    <div key={stat.label} className="min-w-0">
-                      <p className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-[1.65rem]">
+                    <div
+                      key={stat.label}
+                      className="flex items-end justify-between gap-4 border-b border-border/60 pb-4 last:border-b-0 last:pb-0"
+                    >
+                      <dt className="max-w-[11rem] text-sm leading-snug text-muted-foreground">
+                        {stat.label}
+                      </dt>
+                      <dd className="font-display text-2xl leading-none font-bold tracking-tight text-foreground sm:text-3xl">
                         {stat.value}
-                      </p>
-                      <p className="mt-1 text-sm leading-snug text-muted-foreground">{stat.label}</p>
+                      </dd>
                     </div>
                   ))}
-                </div>
+                </dl>
               </div>
             </div>
           </div>

@@ -2,11 +2,11 @@
 
 Landing page para o programa de emagrecimento **Agile Fit** — SPA responsiva com foco em conversão de leads.
 
-![](public/demo.png)
+![](docs/screenshots/demo.png)
 
 ## Sobre o projeto
 
-Página única com navegação por âncoras, apresent o método, benefícios, depoimentos, FAQ e formulário de inscrição. Os leads são enviados para uma API PHP externa. Inclui página de privacidade (LGPD).
+Página única com navegação por âncoras, apresenta o método, benefícios, depoimentos, FAQ e formulário de inscrição. Os leads são enviados para uma API PHP externa. Inclui página de privacidade (LGPD).
 
 ### Seções
 
@@ -22,6 +22,7 @@ Página única com navegação por âncoras, apresent o método, benefícios, de
 - **Tailwind CSS 4** + **shadcn/ui** (Button, Card, Input, Sheet, Accordion, Avatar)
 - **Sonner 2** (notificações)
 - **Lucide React** (ícones)
+- **Lenis** (scroll suave)
 - **Vitest** (testes unitários)
 
 ## Estrutura
@@ -32,7 +33,7 @@ src/
 ├── components/      # Seções da página (Hero, Header, FAQ, etc.)
 │   └── ui/          # Componentes shadcn/ui em uso
 ├── content/         # Copy e claims centralizados
-├── hooks/           # use-mobile (menu responsivo)
+├── hooks/           # use-mobile, use-smooth-scroll, use-reveal
 ├── lib/             # Utilitários, leads API, validação
 ├── pages/           # Index, Privacy, NotFound
 └── App.tsx          # Roteamento leve + Toaster
@@ -49,7 +50,7 @@ npm install
 npm run dev
 ```
 
-Acesse `http://localhost:8080`.
+Acesse `http://localhost:5173`.
 
 ### Variáveis de ambiente
 
@@ -92,6 +93,7 @@ URL padrão do site: `https://guilhermeroesler.github.io/AgileFit/`
 | `npm run lint` | ESLint |
 | `npm run typecheck` | TypeScript (`tsc --noEmit`) |
 | `npm test` | Testes unitários (Vitest) |
+| `npm run test:watch` | Vitest em modo watch |
 | `npm run optimize:images` | Comprime hero, transformação, demo e favicon |
 
 ## API de leads

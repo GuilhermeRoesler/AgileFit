@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CheckCircle, Mail, User } from "lucide-react";
 import { toast } from "sonner";
-import transformationImage from "@/assets/transformation.jpg";
+import { transformationImage } from "@/lib/images";
 import { formCopy, site } from "@/content/site";
 import { isValidEmail } from "@/lib/email";
 import { submitLead } from "@/lib/leads";
@@ -94,7 +94,9 @@ const NewsletterForm = () => {
           <div className="grid lg:grid-cols-2">
             <Reveal className="relative min-h-[320px] lg:min-h-full">
               <img
-                src={transformationImage}
+                src={transformationImage.src}
+                srcSet={transformationImage.srcSet}
+                sizes={transformationImage.sizes}
                 alt="Alimentação saudável do método Agile Fit"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"

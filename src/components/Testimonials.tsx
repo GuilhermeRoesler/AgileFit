@@ -1,11 +1,11 @@
 import Reveal from "@/components/Reveal";
 import { testimonials, testimonialsSection } from "@/content/site";
+import { transformationImage } from "@/lib/images";
 import { cn } from "@/lib/utils";
 import { Star } from "lucide-react";
 import anaPhoto from "@/assets/testimonial-ana.webp";
 import joaoPhoto from "@/assets/testimonial-joao.webp";
 import mariaPhoto from "@/assets/testimonial-maria.webp";
-import transformationImage from "@/assets/transformation.jpg";
 
 const photos = {
   maria: mariaPhoto,
@@ -43,7 +43,9 @@ const Testimonials = () => {
             <div className="grid md:grid-cols-[1.1fr_1fr]">
               <div className="relative min-h-[220px] md:min-h-[280px]">
                 <img
-                  src={transformationImage}
+                  src={transformationImage.src}
+                  srcSet={transformationImage.srcSet}
+                  sizes={transformationImage.sizes}
                   alt={testimonialsSection.proofImageAlt}
                   className="absolute inset-0 h-full w-full object-cover"
                   loading="lazy"

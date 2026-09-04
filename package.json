@@ -47,6 +47,7 @@
     "vitest": "^3.2.4"
   },
   "allowScripts": {
-    "@swc/core@1.16.1": true
+    "@swc/core@1.16.1": true,
+    "esbuild@0.28.2": true
   }
 }

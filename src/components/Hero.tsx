@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-fitness.png";
+import { heroImage } from "@/lib/images";
 import { withBase } from "@/lib/paths";
 import { hero, site } from "@/content/site";
 
@@ -9,7 +9,9 @@ const Hero = ({ onCtaClick }: { onCtaClick: () => void }) => {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden text-center text-white">
       <div className="absolute inset-0 z-0">
         <img
-          src={heroImage}
+          src={heroImage.src}
+          srcSet={heroImage.srcSet}
+          sizes={heroImage.sizes}
           alt={hero.imageAlt}
           className="h-full w-full origin-center object-cover animate-ken-burns"
           fetchPriority="high"

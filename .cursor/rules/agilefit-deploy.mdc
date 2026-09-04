@@ -1,0 +1,14 @@
+---
+description: Base path, SEO e CI/Pages — aponta para skill de deploy
+globs: vite.config.ts,index.html,.github/workflows/**,.env.example,src/lib/paths.ts,src/lib/paths.test.ts,public/**
+alwaysApply: false
+---
+
+# Paths, SEO e deploy
+
+`VITE_BASE_PATH` / `VITE_SITE_URL` / `VITE_LEADS_API_URL` controlam base, SEO e leads. Deploy via GitHub Pages no workflow CI.
+
+**Antes de alterar Vite plugins, env, paths ou CI/CD:** leia
+[`.cursor/skills/agilefit-deploy/SKILL.md`](../skills/agilefit-deploy/SKILL.md).
+
+Sempre usar `withBase` / `appPathname` para links e roteamento com base path.

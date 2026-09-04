@@ -1,0 +1,17 @@
+---
+description: Visão geral do Agile Fit — leia a skill antes de mudanças estruturais
+alwaysApply: true
+---
+
+# Agile Fit — núcleo
+
+Landing SPA de conversão (React 19 + Vite 8 + TypeScript + Tailwind 4 + shadcn).
+
+**Antes de alterar arquitetura, stack, pastas ou convenções:** leia e siga
+[`.cursor/skills/agilefit-overview/SKILL.md`](../skills/agilefit-overview/SKILL.md).
+
+Regras rápidas:
+- Copy e claims só em `src/content/site.ts`
+- Alias `@/` → `src/`
+- Não inventar rotas além de `/` e `/privacidade` sem atualizar paths/SEO
+- Qualidade: `typecheck`, `lint`, `test` e `build` devem passar

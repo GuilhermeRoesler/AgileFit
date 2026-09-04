@@ -1,0 +1,14 @@
+---
+description: Copy e claims da landing — aponta para skill de conteúdo
+globs: src/content/**
+alwaysApply: false
+---
+
+# Conteúdo / copy
+
+Textos, claims e dados de marketing ficam centralizados em `src/content/site.ts`.
+
+**Antes de editar copy, claims ou estrutura de conteúdo:** leia
+[`.cursor/skills/agilefit-content/SKILL.md`](../skills/agilefit-content/SKILL.md).
+
+Não hardcodar strings de marketing nos componentes de seção.

@@ -1,0 +1,14 @@
+---
+description: UI, tema e seções — aponta para skill de interface
+globs: src/components/**/*.tsx,src/index.css,src/pages/**/*.tsx
+alwaysApply: false
+---
+
+# UI e seções
+
+Seções da landing em `src/components/`; primitivos shadcn em `src/components/ui/`; tema em `src/index.css`.
+
+**Antes de criar/alterar seções, tema ou componentes UI:** leia
+[`.cursor/skills/agilefit-ui/SKILL.md`](../skills/agilefit-ui/SKILL.md).
+
+Preserve a identidade verde/laranja existente; novos shadcn via CLI.

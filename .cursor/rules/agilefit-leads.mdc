@@ -1,0 +1,14 @@
+---
+description: Formulário e API de leads — aponta para skill de inscrição
+globs: src/lib/leads.ts,src/lib/leads.test.ts,src/lib/email.ts,src/lib/email.test.ts,src/components/NewsletterForm.tsx
+alwaysApply: false
+---
+
+# Leads e formulário
+
+Inscrição via `submitLead` + honeypot; feedback com Sonner; validação client-side em `email.ts`.
+
+**Antes de alterar formulário, payload ou integração de leads:** leia
+[`.cursor/skills/agilefit-leads/SKILL.md`](../skills/agilefit-leads/SKILL.md).
+
+Não remover honeypot nem assumir que validação no cliente basta.

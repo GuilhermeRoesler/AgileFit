@@ -3,12 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 import { withBase } from "@/lib/paths";
 import { cn } from "@/lib/utils";
 import { navLinks, site } from "@/content/site";
 
 const Header = () => {
   const isMobile = useIsMobile();
+  const scrollTo = useSmoothScroll();
   const [scrolled, setScrolled] = useState(false);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
@@ -23,7 +25,7 @@ const Header = () => {
 
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    scrollTo(href);
     setIsSheetOpen(false);
   };
 

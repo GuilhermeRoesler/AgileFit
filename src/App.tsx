@@ -1,4 +1,5 @@
 import { useSyncExternalStore } from "react";
+import SmoothScroll from "@/components/SmoothScroll";
 import { Toaster } from "@/components/ui/sonner";
 import { appPathname } from "@/lib/paths";
 import Index from "./pages/Index";
@@ -29,6 +30,7 @@ const App = () => {
 
   return (
     <>
+      <SmoothScroll />
       <Toaster />
       {resolvePage(pathname)}
     </>

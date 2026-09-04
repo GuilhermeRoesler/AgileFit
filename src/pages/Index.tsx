@@ -6,10 +6,12 @@ import Testimonials from "@/components/Testimonials";
 import Faq from "@/components/Faq";
 import NewsletterForm from "@/components/NewsletterForm";
 import Footer from "@/components/Footer";
+import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 const Index = () => {
+  const scrollTo = useSmoothScroll();
   const scrollToForm = () => {
-    document.getElementById("inscricao")?.scrollIntoView({ behavior: "smooth" });
+    scrollTo("#inscricao");
   };
 
   return (

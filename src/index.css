@@ -128,6 +128,45 @@
 
   html {
     scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(142 76% 36%) hsl(142 18% 94% / 0.85);
+  }
+
+  /* WebKit: scrollbar verde → laranja, alinhada à marca */
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(142 18% 94% / 0.9);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      hsl(142 76% 32%) 0%,
+      hsl(142 70% 42%) 45%,
+      hsl(28 95% 52%) 100%
+    );
+    border-radius: 999px;
+    border: 2px solid hsl(142 18% 94%);
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      hsl(142 70% 40%) 0%,
+      hsl(142 68% 48%) 45%,
+      hsl(28 95% 48%) 100%
+    );
+    border: 2px solid hsl(142 18% 94%);
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
   }
 
   body {

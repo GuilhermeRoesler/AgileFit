@@ -1,31 +1,32 @@
+import Reveal from "@/components/Reveal";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { faqs } from "@/content/site";
+import { faqSection, faqs } from "@/content/site";
 
 const Faq = () => {
   return (
-    <section className="bg-muted/30 py-20">
+    <section className="bg-muted/50 py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-16 max-w-3xl text-center">
-          <h2 className="mb-4 text-4xl font-bold sm:text-5xl">Dúvidas Frequentes</h2>
-          <p className="text-xl text-muted-foreground">
-            Tudo o que você precisa saber antes de começar sua jornada de transformação.
-          </p>
-        </div>
+        <Reveal className="mx-auto mb-14 max-w-3xl text-center">
+          <h2 className="mb-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
+            {faqSection.title}
+          </h2>
+          <p className="text-lg text-muted-foreground sm:text-xl">{faqSection.description}</p>
+        </Reveal>
 
-        <div className="mx-auto max-w-3xl">
-          <Accordion type="single" collapsible className="w-full space-y-4">
+        <Reveal className="mx-auto max-w-3xl">
+          <Accordion type="single" collapsible className="w-full space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={faq.question}
                 value={`item-${index}`}
-                className="rounded-lg border bg-background px-6"
+                className="rounded-2xl border border-border/80 bg-background px-6"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline">
+                <AccordionTrigger className="text-left font-display text-lg font-semibold hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-base leading-relaxed text-muted-foreground">
@@ -34,7 +35,7 @@ const Faq = () => {
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

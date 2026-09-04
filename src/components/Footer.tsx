@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2 md:items-start">
           <div>
-            <div className="mb-3 flex items-center gap-3 text-xl font-bold">
+            <div className="mb-3 flex items-center gap-3 font-display text-xl font-bold tracking-tight">
               <img src={withBase("/favicon.svg")} alt="" className="h-10 w-10 rounded-[22%]" width={40} height={40} />
               <span>{site.name}</span>
             </div>

@@ -27,6 +27,13 @@ export const hero = {
   imageAlt: "Mulher fitness comemorando resultados",
 } as const;
 
+export const benefitsSection = {
+  title: "Por Que o Agile Fit",
+  titleAccent: "Realmente Funciona?",
+  description:
+    "Um programa completo pensado para você alcançar seus objetivos de forma sustentável e definitiva.",
+} as const;
+
 export const benefits = [
   {
     icon: "Target" as const,
@@ -59,6 +66,13 @@ export const benefits = [
     description: "No programa completo: pague uma vez e tenha acesso para sempre, com atualizações.",
   },
 ];
+
+export const programSection = {
+  title: "Tudo Que Você Precisa Para",
+  titleAccent: "Sua Transformação",
+  description:
+    "Um método completo que une treino, nutrição e mentalidade para resultados definitivos.",
+} as const;
 
 export const programDetails = [
   {
@@ -99,6 +113,26 @@ export const programDetails = [
   },
 ];
 
+export const productPreview = {
+  eyebrow: "Dentro da plataforma",
+  weekLabel: "Semana 3 de 12",
+  dayLabel: "Hoje · Treino HIIT",
+  progressLabel: "Progresso do ciclo",
+  progressValue: 58,
+  sessions: [
+    { time: "08:00", title: "Ativação metabólica", meta: "12 min", done: true },
+    { time: "12:30", title: "Almoço do cardápio B", meta: "420 kcal", done: true },
+    { time: "19:00", title: "HIIT full body", meta: "30 min", done: false },
+  ],
+  footerNote: "Planner + videoaulas + comunidade em um só lugar",
+} as const;
+
+export const testimonialsSection = {
+  title: "Histórias de",
+  titleAccent: "Sucesso Real",
+  description: "Veja o que nossos alunos estão dizendo sobre suas transformações",
+} as const;
+
 export const testimonials = [
   {
     name: "Maria Silva",
@@ -107,6 +141,7 @@ export const testimonials = [
       "O Agile Fit mudou minha vida! Consegui emagrecer sem passar fome e com treinos que cabem na minha rotina. Recomendo demais!",
     rating: 5,
     initials: "MS",
+    accent: "primary" as const,
   },
   {
     name: "João Santos",
@@ -115,6 +150,7 @@ export const testimonials = [
       "Já tentei várias dietas e nunca deu certo. Com o método Agile Fit aprendi a me alimentar corretamente e os resultados são incríveis!",
     rating: 5,
     initials: "JS",
+    accent: "secondary" as const,
   },
   {
     name: "Ana Costa",
@@ -123,8 +159,14 @@ export const testimonials = [
       "A comunidade é o diferencial! Sempre tem alguém para motivar e tirar dúvidas. Me sinto parte de uma família fitness.",
     rating: 5,
     initials: "AC",
+    accent: "primary" as const,
   },
 ] as const;
+
+export const faqSection = {
+  title: "Dúvidas Frequentes",
+  description: "Tudo o que você precisa saber antes de começar sua jornada de transformação.",
+} as const;
 
 export const faqs = [
   {

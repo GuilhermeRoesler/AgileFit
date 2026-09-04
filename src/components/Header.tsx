@@ -51,7 +51,7 @@ const Header = () => {
         scrolled ? "bg-background/95 text-foreground shadow-md backdrop-blur-sm" : "bg-transparent text-white",
       )}
     >
-      <a href={withBase("/")} className="flex items-center gap-3 text-2xl font-bold">
+      <a href={withBase("/")} className="flex items-center gap-3 font-display text-2xl font-bold tracking-tight">
         <img src={withBase("/favicon.svg")} alt="" className="h-12 w-12 rounded-[22%]" width={48} height={48} />
         <span>{site.name}</span>
       </a>

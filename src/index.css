@@ -2,29 +2,31 @@
 @import "tw-animate-css";
 
 :root {
-  --background: hsl(0 0% 100%);
-  --foreground: hsl(142 76% 15%);
+  --background: hsl(40 20% 98%);
+  --foreground: hsl(142 76% 12%);
   --card: hsl(0 0% 100%);
-  --card-foreground: hsl(142 76% 15%);
+  --card-foreground: hsl(142 76% 12%);
   --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(142 76% 15%);
-  --primary: hsl(142 76% 36%);
+  --popover-foreground: hsl(142 76% 12%);
+  --primary: hsl(142 76% 32%);
   --primary-foreground: hsl(0 0% 100%);
-  --primary-glow: hsl(142 76% 56%);
-  --secondary: hsl(33 100% 50%);
+  --primary-glow: hsl(142 70% 48%);
+  --secondary: hsl(28 95% 52%);
   --secondary-foreground: hsl(0 0% 100%);
-  --muted: hsl(142 30% 96%);
-  --muted-foreground: hsl(142 10% 45%);
-  --accent: hsl(33 100% 50%);
+  --muted: hsl(142 18% 94%);
+  --muted-foreground: hsl(142 10% 38%);
+  --accent: hsl(28 95% 52%);
   --accent-foreground: hsl(0 0% 100%);
   --destructive: hsl(0 84.2% 60.2%);
   --destructive-foreground: hsl(0 0% 100%);
-  --border: hsl(142 30% 90%);
-  --input: hsl(142 30% 90%);
-  --ring: hsl(142 76% 36%);
+  --border: hsl(142 16% 88%);
+  --input: hsl(142 16% 88%);
+  --ring: hsl(142 76% 32%);
   --radius: 0.75rem;
-  --shadow-glow: 0 10px 40px -10px hsl(142 76% 36% / 0.3);
-  --shadow-strong: 0 20px 60px -15px hsl(142 76% 36% / 0.4);
+  --shadow-glow: 0 10px 40px -12px hsl(142 76% 32% / 0.28);
+  --shadow-strong: 0 18px 50px -18px hsl(28 95% 42% / 0.35);
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", "Outfit", ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme inline {
@@ -51,8 +53,12 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", "Outfit", ui-sans-serif, system-ui, sans-serif;
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-in: fade-in 0.6s ease-out both;
   --breakpoint-2xl: 87.5rem;
 }
 
@@ -74,13 +80,48 @@
   }
 }
 
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 100% -10%, hsl(142 60% 40% / 0.06), transparent),
+      radial-gradient(ellipse 60% 40% at 0% 100%, hsl(28 90% 50% / 0.05), transparent);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
   }
 }
 
@@ -91,5 +132,23 @@
 
   @media (width >= 87.5rem) {
     max-width: 87.5rem;
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

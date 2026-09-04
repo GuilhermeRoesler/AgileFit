@@ -7,7 +7,7 @@ const Privacy = () => {
     <main className="min-h-screen bg-background">
       <header className="border-b border-border">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
-          <a href={withBase("/")} className="flex items-center gap-3 text-xl font-bold">
+          <a href={withBase("/")} className="flex items-center gap-3 font-display text-xl font-bold tracking-tight">
             <img src={withBase("/favicon.svg")} alt="" className="h-10 w-10 rounded-[22%]" width={40} height={40} />
             <span>{site.name}</span>
           </a>
@@ -18,7 +18,7 @@ const Privacy = () => {
       </header>
 
       <article className="container mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
-        <h1 className="mb-2 text-4xl font-bold">{privacyCopy.title}</h1>
+        <h1 className="mb-2 font-display text-4xl font-bold tracking-tight">{privacyCopy.title}</h1>
         <p className="mb-10 text-sm text-muted-foreground">{privacyCopy.updated}</p>
 
         <div className="space-y-8">

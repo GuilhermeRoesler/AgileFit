@@ -40,6 +40,17 @@ async function compressPng(input, { width, quality = 80, palette = true } = {}) 
   await logSize(path.basename(input), input, original);
 }
 
+async function compressWebp(input, { width, quality = 75 } = {}) {
+  const original = await sharp(input).metadata();
+  const tmp = `${input}.tmp`;
+  const info = await sharp(input)
+    .resize(width ?? null, null, { withoutEnlargement: true })
+    .webp({ quality, effort: 6 })
+    .toFile(tmp);
+  await replaceFile(tmp, input);
+  await logSize(path.basename(input), input, { ...original, width: info.width, height: info.height });
+}
+
 async function removeIfPresent(filePath) {
   try {
     await unlink(filePath);
@@ -65,7 +76,7 @@ await writeWebpVariants("src/assets/transformation.jpg", {
   quality: 78,
 });
 
-await compressPng("public/demo.png", { width: 1200, quality: 75 });
+await compressWebp("public/demo.webp", { width: 1200, quality: 75 });
 await compressPng("public/favicon.png", { width: 180, quality: 90, palette: false });
 
 for (const name of ["maria", "joao", "ana"]) {

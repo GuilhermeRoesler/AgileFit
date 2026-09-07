@@ -2,7 +2,7 @@
 
 Landing page para o programa de emagrecimento **Agile Fit** — SPA responsiva com foco em conversão de leads.
 
-![](docs/screenshots/demo.png)
+![](public/demo.webp)
 
 ## Sobre o projeto
 
